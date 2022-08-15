@@ -1,3 +1,10 @@
+/*
+You are given two non-empty linked lists representing two non-negative integers.
+The digits are stored in reverse order, and each of their nodes contains a single digit.
+Add the two numbers and return the sum as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ */
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -11,18 +18,13 @@ public class AddNumbers {
         List<Integer> l2 = new LinkedList<>(Arrays.asList(9,9,9,9,9,9,9));
         List<Integer> sum = new LinkedList<>();
 
-//        int i = 0;
-//        while(l1.get(i) != null){
-//            System.out.println(l1.get(i));
-//            i++;
-//        };
 
         int m1 = l1.size();
         int m2 = l2.size();
         int maxsize;
         int elementsSum;
         int remainder;
-        int inmind;
+        int carry;
 
         if (m1 > m2) {
             for (int i = m2; i < m1; i++) {
@@ -34,23 +36,22 @@ public class AddNumbers {
                 l1.add(0);
             }
             maxsize = m2;
-
         }
-        //  int elementsSum;
-        inmind = 0;
+
+        carry = 0;
         for (int i = 0; i < maxsize; i++) {
 
-            elementsSum = l1.get(i) + l2.get(i) + inmind;
+            elementsSum = l1.get(i) + l2.get(i) + carry;
             if (elementsSum < 10)
                 sum.add(elementsSum);
             else {
                 remainder = elementsSum % 10;
-                inmind = elementsSum/10;
+                carry = elementsSum/10;
                 sum.add(remainder);
 
             }
         }
-        if (inmind != 0) sum.add(inmind);
+        if (carry != 0) sum.add(carry);
 
 
         System.out.println(l2);
