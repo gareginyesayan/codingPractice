@@ -1,9 +1,16 @@
-import java.util.*;
+/*
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
+ such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
-//Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
-// such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
-//
-//        Notice that the solution set must not contain duplicate triplets.
+Notice that the solution set must not contain duplicate triplets.
+
+Example:
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+ */
+
+
+import java.util.*;
 
 
 public class Sum3 {
@@ -41,4 +48,20 @@ public class Sum3 {
         return returnArray;
 
     }
+
+/*    public static List<List<Integer>> threeSumNew(int[] nums){
+        List<List<Integer>> returnArray = new ArrayList<>();
+        Map<Integer, Integer> hm = new HashMap<>();
+        int numsLength = nums.length;
+        for (int i = 0; i < numsLength - 1; i++){
+            for (int j = i + 1; j < numsLength ; j++){
+                if hm.containsKey(-nums[i] - nums[j]){
+                    returnArray.add(new ArrayList<>(Arrays.asList(nums[i], nums[j], -nums[i] - nums[j])));
+                }
+
+            }
+        }
+
+        return returnArray;
+    }*/
 }
