@@ -23,11 +23,11 @@ public class LongestPrefix {
     public static void main(String[] args) {
 
         String[] strs = {"flower", "flow", "flight"};
-        String prefix = returnPrefix(strs);
+        String prefix = returnLongestPrefix(strs);
         System.out.println(prefix);
     }
 
-    public static String returnPrefix(String[] strs) {
+    public static String returnLongestPrefix(String[] strs) {
         String prefix = "";
         int i = 0;
         do {
