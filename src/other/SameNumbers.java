@@ -4,15 +4,28 @@ Check when multiplying a six-digit number with 2 gives a number that has all the
 
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class SameNumbers {
 
     public static void main(String[] args) {
 
-        long n = 142857;
-        System.out.println("n = " + n);
-        System.out.println("n = " + 2*n);
-        System.out.println(isSameNumbers(n));
+//        long n = 142857;
+//        System.out.println("n = " + n);
+//        System.out.println("n = " + 2*n);
+//        System.out.println(isSameNumbers(n));
+
+        String word = "aa1hg0kh001df00";
+        HashSet<String> nums = new HashSet<>();
+        String[] words = word.split("[a-z]+");
+        for(String w: words){
+            if(w.length()!=0)
+                nums.add(w.replaceAll("^0+", ""));
+            System.out.println(w.replaceAll("^0+", ""));
+
+        }
+
+        System.out.println(nums);
 
     }
 

@@ -16,6 +16,7 @@ public class ValidAnagram {
         String t = "nagaram";
         System.out.println(isAnagram(s, t));
 
+
     }
 
     public static boolean isAnagram(String s, String t) {
